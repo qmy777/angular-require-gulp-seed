@@ -1,6 +1,7 @@
 ## Angular + Require + Gulp web app seed project
 
 ### brief folder system introduction
+``` shell
 /--src
 	|--components	(custom libs or plugins)
 	|--directives	(public directives)
@@ -30,6 +31,7 @@
 |--bower.json
 |--gulpfile
 |--package.json
+```
 
 ### suppose you already has bower and npm
 ``` sheel
