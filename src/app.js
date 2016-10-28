@@ -50,13 +50,24 @@ define([
 				$urlRouterProvider.otherwise("/");
 				$stateProvider
 				//首页
-				.state('/', {
+				.state('index', {
 					url: '/',
 					cache:'false',
 					templateUrl: 'views/index/index.html',
 					controller: 'indexController',
 					resolve:{
 						deps:$requireProvider.requireJS(['views/index/index'])
+					}
+				})
+
+				//notification插件demo链接
+				.state('notification', {
+					url: '/notification',
+					cache:'false',
+					templateUrl: 'views/notification/notification.html',
+					controller: 'notificationController',
+					resolve:{
+						deps:$requireProvider.requireJS(['views/notification/notification'])
 					}
 				})
 			});
