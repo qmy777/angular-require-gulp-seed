@@ -8,6 +8,9 @@ require.config({
     	'angular-sanitize': 'public/angular-sanitize/angular-sanitize.min',
     	'angular-translate': 'public/angular-translate/angular-translate.min',
     	'angular-ui-router': 'public/angular-ui-router/release/angular-ui-router.min',
+
+        'angular-ui-notification': 'public/angular-ui-notification/dist/angular-ui-notification.min',
+
         'css': 'public/require-css/css.min',
 
         // enter file
@@ -20,11 +23,42 @@ require.config({
         'angular': {
             exports: 'angular'
         },
-        'angular-cookies': ['angular'],
-        'angular-require': ['angular'],
-        'angular-sanitize': ['angular'],
-        'angular-translate': ['angular'],
-        'angular-ui-router': ['angular']
+        'angular-cookies': {
+            deps: ['angular'],
+            exports: 'angular-cookies'
+        },
+        'angular-require': {
+            deps: ['angular'],
+            exports: 'angular-require'
+        },
+        'angular-sanitize': {
+            deps: ['angular'],
+            exports: 'angular-sanitize'
+        },
+        'angular-translate': {
+            deps: ['angular'],
+            exports: 'angular-translate'
+        },
+        'angular-ui-router': {
+            deps: ['angular'],
+            exports: 'angular-ui-router'
+        },
+        'angular-ui-notification': {
+            deps: ['angular', 'css!public/angular-ui-notification/dist/angular-ui-notification.min.css'],
+            exports: 'angular-ui-notification'
+        },
+        'app': {
+            deps: ['angular','angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize', 'angular-ui-notification'],
+            exports: 'app'
+        },
+        'header': {
+            deps: ['app'],
+            exports: 'header'
+        },
+        'footer': {
+            deps: ['app'],
+            exports: 'footer'
+        }
     }
 });
 
@@ -33,9 +67,9 @@ require.onError = function(err){
     console.log('require error:',err,arguments);
 };
 
-require(['angular','angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize'],function (angular){
+// require(['angular','angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize'],function (angular){
     
-    require(['app','header','footer'],function(){
+    require(['header','footer'],function(){
     //require(['app','controllers'],function(){
 
         console.log('angular.bootstrap');
@@ -43,4 +77,4 @@ require(['angular','angular-ui-router','angular-cookies','angular-require','angu
 
     });
 
-});
+// });

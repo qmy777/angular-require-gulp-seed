@@ -9,7 +9,8 @@ define([
 				'ngSanitize', 
 				'pascalprecht.translate',
 				'ui.router',
-				'ngRequire'
+				'ngRequire',
+				'ui-notification'
 			])
 
 			// .constant('cLanguageType', {
