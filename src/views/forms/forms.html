@@ -1,0 +1,54 @@
+<link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap-datetimepicker/3.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<div class="submit-div w">
+	<div class="submit-content">
+		<!-- form表单 -->
+		<form class="form-horizontal submit-form" name="supportForm">
+			{{ submitOpts.fullName | json }}<br>
+			{{ supportForm.email | json }}
+			<p class="f16 mt15"><span class="font-red">*</span> = 必填</p>
+			<!-- fullname&email address -->
+			<div class="form-group mt20">
+				<div class="form-group col-sm-6 pl0">
+					<label for="fullName">姓名 <span class="font-red">*</span></label>
+    				<input type="text" class="form-control" name="fullName" ng-class="{true:'error', false:''}[supportForm.fullName.$invalid && !supportForm.fullName.$pristine]" id="fullName" ng-model="submitOpts.fullName" novalidate required placeholder="姓名">
+					<label class="error" id="fullName-error" for="fullName" class="input-error" ng-show="supportForm.fullName.$invalid && !supportForm.fullName.$pristine">请填写您的姓名!</label>
+				</div>
+				<div class="form-group col-sm-6 pr0">
+					<label for="exampleInputEmail1">Email地址<span class="font-red">*</span></label>
+    				<input type="email" class="form-control"  ng-class="{true:'error', false:''}[supportForm.email.$invalid && !supportForm.email.$pristine]" id="Email" name="email" placeholder="Email" ng-model="email" required>
+					<label class="error" ng-show="supportForm.email.$invalid && !supportForm.email.$pristine">请填写您的邮箱!</label>
+				</div>
+			</div>
+			<!-- issue&subject -->
+			<div class="form-group mt15">
+				<div class="form-group col-sm-6 pl0 pr">
+					<label for="exampleInputEmail1">问题分类<span class="font-red">*</span></label>
+					<span class="type-select-icon">&or;</span>
+    				<select class="form-control" id="submit-issue" name="issue" placeholder="问题分类" ng-model="issue">
+						<option disabled selected>请选择一个类别</option>
+						<option>技术(链接/同步,电池,死机,数据丢失)</option>
+						<!--<option>Order&Shipment</option>-->
+						<!--<option>Return,Refund,Lost</option>-->
+						<option>其它</option>
+    				</select>
+				</div>
+				<div class="form-group col-sm-6 pl0 pr">
+					<label for="exampleInputEmail1">购买日期</label>
+					<span class="glyphicon glyphicon-calendar date-select-icon"></span>
+    				<input type="text" name="purchaseDate" class="form-control" id="purchase-date" placeholder="" ng-model="purchaseDate">
+				</div>
+			</div>
+			<!-- question -->
+			<div class="form-group mt15">
+				<label for="exampleInputEmail1">问题描述<span class="font-red">*</span></label>
+				<textarea name="question" class="form-control" rows="3" placeholder="请尽量详细地描述您的问题, 谢谢!" ng-model="description"></textarea>
+			</div>
+			<p class="fr">
+  				<button type="submit" class="btn btn-info mr10" ng-click="submitTheForm()">提交</button>
+  				<button type="button" class="btn btn-info" onclick="window.history.back();">返回</button>
+			</p>
+		</form>
+	</div>
+</div>
+

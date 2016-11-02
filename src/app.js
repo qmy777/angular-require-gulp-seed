@@ -70,6 +70,17 @@ define([
 						deps:$requireProvider.requireJS(['views/notification/notification'])
 					}
 				})
+
+				//form表单
+				.state('form', {
+					url: '/form',
+					cache:'false',
+					templateUrl: 'views/forms/forms.html',
+					controller: 'formCtrl',
+					resolve:{
+						deps:$requireProvider.requireJS(['views/forms/forms'])
+					}
+				})
 			});
 
 		return app;

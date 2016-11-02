@@ -2,6 +2,7 @@ require.config({
     baseUrl: './',
     paths: {
     	// some main framework files
+
     	'angular': 'public/angular/angular.min',
     	'angular-cookies': 'public/angular-cookies/angular-cookies.min',
     	'angular-require': 'public/angular-require/angular-require.min',
@@ -48,7 +49,11 @@ require.config({
             exports: 'angular-ui-notification'
         },
         'app': {
-            deps: ['angular','angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize', 'angular-ui-notification'],
+            deps: [
+                'angular',
+                'angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize', 'angular-ui-notification',
+                'css!dist/css/all.css'
+            ],
             exports: 'app'
         },
         'header': {
