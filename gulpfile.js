@@ -78,14 +78,14 @@ gulp.task('hashScripts', function () {
 gulp.task('watch',function(){
     gulp.watch(['src/styles/*.css','src/styles/page/*.css'],['styles']);
     // gulp.watch(['src/i18n/cn.js'],['toHtml']);
-    // gulp.watch(['src/i18n/*.js'],['i18n']);
+    gulp.watch(['src/i18n/*.js'],['i18n']);
 
     gulp.watch(['src/app.js','src/dist/**/*.*','!src/dist/js/rev-manifest.js','src/scripts/app/*.js','src/views/**/*.*','src/dist/i18n/*.js'],['hashScripts']);
 });
 
 gulpSequence = sequence.use(gulp);
 // 'toHtml', 'i18n',
-gulp.task('default', gulpSequence(['styles'], 'hashScripts'));
+gulp.task('default', gulpSequence(['styles'], 'i18n', 'hashScripts'));
 
 
 /*===================   发布正式操作  =========================*/

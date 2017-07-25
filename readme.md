@@ -38,7 +38,7 @@
 # install all node moudles for gulp
 npm install
 # install all web framworks and plugins
-npm postinit
+bower install
 ```
 
 ### configure your NGINX or something else

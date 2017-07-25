@@ -9,7 +9,7 @@ define(['app'], function (app){
 
 			// Other Options
 			// Success
-			// $notify.success('Success notification');
+			// $notify.success({'Success notification');
 
 			// Message with custom type
 			// $notify({message: 'Warning notification'}, 'warning');
@@ -28,13 +28,14 @@ define(['app'], function (app){
 
 			// Replace message
 			$notify.error({
+				templateUrl: 'public/angular-ui-notification/src/angular-ui-notification.html',
 				message: 'Error notification 1s', 
 				replaceMessage: true, 
 				positionX: 'center', 
 				startTop: 100,
 				onClose:function (a){
 					console.log($location.url());
-				}});
+			}});
 		}
 
 	}]);
