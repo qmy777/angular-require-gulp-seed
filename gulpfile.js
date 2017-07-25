@@ -7,9 +7,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     livereload = require('gulp-livereload'),
     revList = require('gulp-rev-list'),
-    sequence = require('gulp-sequence'),
-    fontSpider = require( 'gulp-font-spider'),
-    jsToHtml = require('./src/components/gulp-i18njs-to-html');
+    sequence = require('gulp-sequence');
 
 
 /*===================   中文页面    ==========================*/
@@ -53,6 +51,8 @@ gulp.task('hashScripts', function () {
 });
 
 // 压缩i18n文件
+
+gulp.task('default', ['hashScripts']);
 
 // 监听启动
 gulp.task('watch',function(){

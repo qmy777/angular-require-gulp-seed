@@ -1,7 +1,4 @@
-define([
-	'dist/i18n/cn.min',
-	'dist/i18n/en.min'
-	], function(cnTranslate, enTranslate){
+define([], function() {
 
 		console.log('app');
 
@@ -12,39 +9,6 @@ define([
 				'ngRequire',
 				'ui-notification'
 			])
-
-			// .constant('cLanguageType', {
-			// 	en: {
-			// 		name: 'en',
-			// 		value: enTranslate
-			// 	},
-			// 	cn: {
-			// 		name: 'cn',
-			// 		value: cnTranslate
-			// 	}
-			// })
-
-			.config(['$translateProvider', function ($translateProvider) {
-			  	// add translation tables
-			  	var lang = window.navigator.language;
-
-			  	$translateProvider.translations('cn', cnTranslate);
-			  	$translateProvider.translations('en', enTranslate);
-			  	if (lang.indexOf('zh') > -1) {
-					$translateProvider.preferredLanguage('cn');
-					$translateProvider.fallbackLanguage('cn');
-					
-			  	} else if (lang.indexOf('en') > -1) {
-			  		$translateProvider.preferredLanguage('en');
-					$translateProvider.fallbackLanguage('en');
-					
-			  	} else {
-			  		$translateProvider.preferredLanguage('cn');
-					$translateProvider.fallbackLanguage('cn');
-					
-			  	}
-			  	
-			}])
 
 			.config(function ($stateProvider, $urlRouterProvider, $requireProvider){
 				$urlRouterProvider.otherwise("/");

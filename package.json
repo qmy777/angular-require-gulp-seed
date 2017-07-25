@@ -4,34 +4,18 @@
   "description": "angular+require+gulp+i18n seed project",
   "main": "index.js",
   "dependencies": {
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.3.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-jshint": "^1.12.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-livereload": "^3.8.1",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-notify": "^2.2.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-rev-list": "^0.1.1",
-    "gulp-ruby-sass": "^2.0.5",
-    "gulp-uglify": "^1.4.2",
-    "through2": "^2.0.1"
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0"
   },
-  "devDependencies": {
-    "cheerio": "^0.22.0",
-    "gulp-font-spider": "^0.3.6",
-    "gulp-minify-html": "^1.0.6",
-    "gulp-rev": "^7.1.0",
-    "gulp-rev-collector": "^1.0.4",
-    "gulp-sequence": "^0.4.5",
-    "gulp-util": "^3.0.7",
-    "rev-hash": "^1.0.0",
-    "rev-path": "^1.0.0",
-    "vinyl-file": "^2.0.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "postinit": "bower install"
   },

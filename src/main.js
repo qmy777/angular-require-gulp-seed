@@ -52,8 +52,7 @@ require.config({
         'app': {
             deps: [
                 'angular',
-                'angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize', 'angular-ui-notification',
-                'css!dist/css/all.css'
+                'angular-ui-router','angular-cookies','angular-require','angular-translate','angular-sanitize', 'angular-ui-notification'
             ],
             exports: 'app'
         },
